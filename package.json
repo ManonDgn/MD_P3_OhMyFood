@@ -1,0 +1,19 @@
+{
+  "name": "md_p3_ohmyfood",
+  "version": "1.0.0",
+  "description": "P3",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./sass/main.scss:css/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ManonDgn/MD_P3_OhMyFood.git"
+  },
+  "author": "MD",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ManonDgn/MD_P3_OhMyFood/issues"
+  },
+  "homepage": "https://github.com/ManonDgn/MD_P3_OhMyFood#readme"
+}
