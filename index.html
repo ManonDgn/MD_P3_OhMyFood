@@ -1,12 +1,129 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="sass/main.css">
+        <script src="https://kit.fontawesome.com/95f69b3d4d.js" crossorigin="anonymous"></script>
+        <title>Oh My Food - Réservez votre menu</title>
+    </head>
+<!-- Page Accueil-->
+    <body>
+        <header>
+            <div class="logo">
+            <img src="/img/logo/ohmyfood@2x.svg" alt="logo ohmyfood" />
+            </div>
+            <!-- Localisation GPS-->
+            <div class="localisation">
+                <i class="fa-solid fa-location-dot"></i>
+                <p class="ville-quartier">Paris, Belleville</p>
+            </div>
+        </header>
+        <main>
+            <!-- Présentation OhMyFood-->
+            <div class="presentation">
+                <h1>Réservez le menu qui vous convient</h1>
+                <p class="sous-titre">Découvrez des restaurants d'exception, séléctionnés par nos soins.</p>
+                <div class="btn">
+                    <a href="#">Explorer nos restaurants</a>
+                </div>
+            </div>
+            <!-- Fonctionnement détaillé OhMyFood-->
+            <div class="fonctionnement">
+                <h2>Fonctionnement</h2>
+                <div class="f-carte">
+                    <p class="f-num">1</p>
+                    <i class="fa-solid fa-mobile-screen-button f-icon"></i>
+                    <p class="f-text">Choisissez un restaurant</p>
+                </div>
+                <div class="f-carte">
+                    <p class="f-num">2</p>
+                    <i class="fa-solid fa-list f-icon"></i>
+                    <p class="f-text">Composez votre menu</p>
+                </div>
+                <div class="f-carte">
+                    <p class="f-num">3</p>
+                    <i class="fa-solid fa-store f-icon"></i>
+                    <p class="f-text">Dégustez au restaurant</p>
+                </div>
+            </div>
+            <!-- Liste restaurants selon localisation-->
+            <div class="li-restaurants">
+                <h2>Restaurants</h2>
+                <div class="restau-carte">
+                    <a href="#">
+                        <div class="carte-pic">
+                            <img src="/img/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="Restaurant La palette du gout Paris"/>
+                        </div>
+                        <div class="carte-body">
+                            <div class="body-desc">
+                                <p class="carte-titre">La palette du goût</p>
+                                <p class="carte-place">Ménilmontant</p>
+                            </div>
+                            <span class="icon-coeurs">
+                                <i class="fa-regular fa-heart"></i>
+                            </span>
+                        </div>
+                    </a>                        
+                </div>
+                <div class="restau-carte">
+                    <a href="#">
+                        <div class="carte-pic">
+                            <img src="/img/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg" alt="Restaurant La note enchantée Paris"/>
+                        </div>
+                        <div class="carte-body">
+                            <div class="body-desc">
+                                <p class="carte-titre">La note enchantée</p>
+                                <p class="carte-place">Charonne</p>
+                            </div>
+                            <span class="icon-coeurs">
+                                <i class="fa-regular fa-heart"></i>
+                            </span>
+                        </div>
+                    </a>                        
+                </div>
+                <div class="restau-carte">
+                    <a href="#">
+                        <div class="carte-pic">
+                            <img src="/img/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg" alt="Restaurant À la française Paris"/>
+                        </div>
+                        <div class="carte-body">
+                            <div class="body-desc">
+                                <p class="carte-titre">À la française</p>
+                                <p class="carte-place">Cité Rouge</p>
+                            </div>
+                            <span class="icon-coeurs">
+                                <i class="fa-regular fa-heart"></i>
+                            </span>
+                        </div>
+                    </a>                        
+                </div>
+                <div class="restau-carte">
+                    <a href="#">
+                        <div class="carte-pic">
+                            <img src="/img/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg" alt="Restaurant Le délice des sens Paris"/>
+                        </div>
+                        <div class="carte-body">
+                            <div class="body-desc">
+                                <p class="carte-titre">Le délice des sens</p>
+                                <p class="carte-place">Folie-Méricourt</p>
+                            </div>
+                            <span class="icon-coeurs">
+                                <i class="fa-regular fa-heart"></i>
+                            </span>
+                        </div>
+                    </a>                        
+                </div>
+            </div>
+        </main>
+        <footer>
+            <h2 class="h2-footer">Ohmyfood</h2>
+            <ul>
+                <li><i class="fa-solid fa-handshake-angle foot-icon"></i><a href="#">Proposer un restaurant</a></li>
+                <li><i class="fa-solid fa-utensils foot-icon"></i><a href="#">Devenir partenaire</a></li>
+                <li><a href="#">Mentions légales</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </footer>
+    </body>
 </html>
