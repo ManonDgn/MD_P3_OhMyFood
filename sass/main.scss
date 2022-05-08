@@ -1,7 +1,8 @@
 @import "./Utils/variables";
 
-body {
+* {
     margin: 0;
+    padding: 0;
 }
 h1 {
     font-size: 30px;
@@ -35,7 +36,11 @@ header {
         display: flex;
         align-items: center;
         justify-content: center;
-        .ville-quartier {
+        ._loc-icone {
+            display: inline-block;
+            font-size: 17px;  
+        }
+        ._ville-quartier {
             display: inline-block;
             padding-left: 15px;
             font-family: $typo-texte ;
@@ -43,20 +48,16 @@ header {
             font-weight: 400;
             margin: 0px;
         }
-        .fa-location-dot {
-            display: inline-block;
-            font-size: 17px;  
-        }
     }
 }
 /* --------------------------------- MAIN */
-main {
+main * {
     font-family: $typo-texte;
     box-sizing: border-box;
 }
 /* --------------------------------------- PRESENTATION */
 .presentation {
-    height: 250px;
+    height: 300px;
     background-color: $color-grey2;
     padding: 20px;
     display: flex;
@@ -69,23 +70,24 @@ main {
         margin: 10px 40px;
         text-align: center;
     }
-    .btn {
-        background: rgb(255,121,218);
-        background: linear-gradient(170deg, rgba(255,121,218,1) 0%, rgba(147,86,220,1) 100%);
-        height: 50px;
-        width: 230px;
-        margin: 15px 40px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-radius: 40px;
-        box-shadow: 0px 4px 10px grey;
-        a {
-            color: white;
-            text-decoration: none;
-            font-size: 17px;
+}
+.btn-action {
+    background: rgb(255,121,218);
+    background: linear-gradient(170deg, rgba(255,121,218,1) 0%, rgba(147,86,220,1) 100%);
+    height: 50px;
+    width: 230px;
+    margin: 15px 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 40px;
+    box-shadow: 0px 4px 10px grey;
+    a {
+        color: white;
+        text-decoration: none;
+        font-family: $typo-texte;
+        font-size: 17px;
         }
-    }
 }
 /* --------------------------------------- FONCTIONNEMENT */
 .fonctionnement {
@@ -93,7 +95,6 @@ main {
     margin: 50px 00px 90px 0px;
     padding: 0px 25px;
 }
-
 .f-carte {
     background-color: $color-grey2;
     height: 80px;
@@ -103,40 +104,39 @@ main {
     justify-content: flex-start;
     border-radius: 20px;
     box-shadow: 0px 7px 10px lightgrey;
+    ._f-num {
+        height: 20px;
+        width: 20px;
+        font-size: 17px;
+        border-radius: 15px;
+        text-align: center;
+        background-color: $color-1;
+        color: white;
+        position: relative;
+        left: -10px;
+        top: 2px;
+    }
+    ._f-icon {
+        height: 20px;
+        width: 20px;
+        color: #7D7D7D;
+        margin: 0 30px;
+        font-size: 20px;
+    }
+    ._f-text {
+        font-weight: 400;
+        font-size: 18px;
+    }
     &:hover {
         background-color: rgba(147,86,220,0.1);
         cursor: default;
-        .f-icon {
+        ._f-icon {
             color: #9356DC;
         }
     }
 }
-.f-num {
-    height: 20px;
-    width: 20px;
-    font-size: 17px;
-    border-radius: 15px;
-    text-align: center;
-    background-color: $color-1;
-    color: white;
-    position: relative;
-    left: -10px;
-    top: 2px;
-}
-.f-icon {
-    height: 20px;
-    width: 20px;
-    color: #7D7D7D;
-    margin: 0 30px;
-    font-size: 20px;
-}
-.f-text {
-    font-weight: 400;
-    font-size: 18px;
-}
 /* --------------------------------------- LISTE RESTAURANTS EN FONCTION DE LA LOCALISATION*/
-
-.li-restaurants {
+.liste-restaurants {
     margin: 50px 0px 0px;
     padding: 50px 25px 50px;
     background-color: $color-grey2 ;
@@ -168,23 +168,22 @@ main {
     align-items: center;
     justify-content: space-between;
     padding: 0 20px;
+    ._titre {
+        font-size: 22px;
+        font-weight: 500;
+        margin: 5px 0;
+    }
+    ._place {
+        font-size: 19px;
+        font-weight: 300;
+        margin: 5px 0;
+    }  
 }
-
-.carte-titre {
-    font-size: 22px;
-    font-weight: 500;
-    margin: 5px 0;
-}
-.carte-place {
-    font-size: 19px;
-    font-weight: 300;
-    margin: 5px 0;
-}   
 .fa-heart {
     display: inline-block;
     font-size: 30px;
     color: $color-black;
-    margin-right: 30px;
+    margin-right: 20px;
     &:active {
         cursor: pointer;
         font-weight: 900;
@@ -196,7 +195,6 @@ main {
         -webkit-text-fill-color: transparent;    
     }
 }
-
 /* --------------------------------- FOOTER */
 footer {
     padding: 20px 5px;
@@ -220,7 +218,205 @@ footer {
         text-decoration: none;
         color: white;
     }
-   .foot-icon {
+   .foot-icone {
        margin-right: 12px;
    }
+}
+/* ------------------------ PAGE 2 - 3 - 4 - 5 */
+.h-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80px;
+    flex-direction: row;
+    a {
+        text-decoration: none;
+        color: $color-black;
+    }
+}
+.logo-rest {
+    position: relative;
+    left: -11px;
+}
+.fa-arrow-left {
+    display: inline-block;
+    font-size: 25px;
+    position: relative;
+    left: -70px;
+}
+.restaurant-menu {
+    background-color: $color-grey2;
+}
+.r-photo {
+    overflow: hidden;
+    height: 300px;
+    img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+}
+.r-body {
+    background-color: $color-grey2;
+    border-radius: 35px 35px 0 0 ;
+    position: relative;
+    top: -40px;
+    ._titre {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0 20px;
+        padding-top: 25px;
+        .r-h1 {
+            font-family: $typo-titre;
+            font-size: 30px;
+            margin: 10px 0;
+        }
+    }
+}
+
+.menu-categorie {
+    .type-plats {
+        font-family: $typo-texte;
+        font-weight: 300;
+        font-size: 20px;
+        text-transform: uppercase;
+        margin: 20px;
+        .h2-underline {
+            display: inline-block;
+            padding-bottom: 6px;
+            border-bottom: 3px solid $color-3;
+        }
+    }
+    ._plat {
+        margin: 20px;
+        height: 60px;
+        background-color: white;
+        box-shadow: 0px 2px 5px lightgrey;
+        border-radius: 15px;
+        animation: fadein 2s;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        overflow: hidden;
+        animation: fadein 2s;
+    }
+    .p1 {
+        animation-delay: .400s;
+    }
+    .p2 {
+        animation-delay: .600s;
+    }
+    .p3 {
+        animation-delay: .800s;
+    }
+    .p4 {
+        animation-delay: 1.5s;
+    } 
+}
+@keyframes coche {
+    0% {
+        transform: rotate(-360deg) ;
+    }
+    100% {
+        transform: rotate(0deg) ;
+    }
+}
+@keyframes move {
+    0% {
+        transform: translateX(0px);
+    }
+    50% {
+        transform: translateX(0px);
+    }
+    100% {
+        transform: translateX(70px) ;
+    }
+}
+@keyframes fadein {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0px)
+    }
+}
+.titre-description {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 10px;
+    padding: 10px 0;
+}
+    .p-titre {
+        font-weight: 600;
+        font-size: 18px;
+    }
+    .p-desc {
+        font-weight: 300;
+        font-size: 16px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+.prix-coche {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-right: -70px;
+    .prix {
+        margin-right: 10px;
+        padding: 0 0 10px 20px;
+        background-color: white;
+        &::before {
+            content: "...";
+            opacity: 0;
+        }
+    }
+    .coche {
+        background-color:$color-3;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 70px;
+    }
+    .fa-check {
+        text-align: center;
+        height: 20px;
+        width: 20px;
+        padding-top: 3px;
+        font-size: 15px;
+        border-radius: 50%;
+        background-color: white;
+        color: $color-3;
+    }
+}
+
+._plat {
+    &:hover {
+        .prix-coche {
+            margin: 0;
+            transition: all 2s;
+            animation: move 3s both;
+            .prix::before {
+                opacity: 1;
+                transition: all 1.5s;
+            }
+        }
+        .fa-check{
+            animation: coche 0.9s;
+        }
+    }
+}
+.r-commande {
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
