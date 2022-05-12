@@ -187,6 +187,24 @@
   }
 }
 
+@-webkit-keyframes fadeout {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeout {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
 @-webkit-keyframes fill {
   0% {
     opacity: 0.2;
@@ -338,7 +356,7 @@ main * {
           justify-content: space-between;
 }
 
-.presentation .sous-titre {
+.presentation-sous-titre {
   font-weight: 100;
   font-size: 20px;
   margin: 10px 40px;
@@ -403,9 +421,9 @@ main * {
           box-shadow: 0px 7px 10px lightgrey;
 }
 
-.f-carte ._f-num {
-  height: 25px;
-  width: 25px;
+.f-carte_num {
+  height: 23px;
+  width: 23px;
   font-size: 15px;
   padding-top: 3px;
   border-radius: 15px;
@@ -414,10 +432,10 @@ main * {
   color: white;
   position: relative;
   left: -10px;
-  top: 2px;
+  top: 4px;
 }
 
-.f-carte ._f-icon {
+.f-carte_f-icone {
   height: 20px;
   width: 20px;
   color: #7D7D7D;
@@ -425,7 +443,7 @@ main * {
   font-size: 20px;
 }
 
-.f-carte ._f-text {
+.f-carte_text {
   font-weight: 400;
   font-size: 18px;
 }
@@ -435,7 +453,7 @@ main * {
   cursor: default;
 }
 
-.f-carte:hover ._f-icon {
+.f-carte:hover .f-carte_f-icone {
   color: #9356DC;
 }
 
@@ -471,15 +489,22 @@ main * {
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  -o-object-position: bottom;
+     object-position: bottom;
 }
 
-.carte-pic .label {
+.carte-pic .img-verti {
+  -o-object-position: center;
+     object-position: center;
+}
+
+.carte-pic_label {
   position: absolute;
   right: 20px;
   top: 20px;
 }
 
-.carte-pic .label ._new {
+.carte-pic_label_new {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -657,6 +682,7 @@ footer .foot-icone {
   opacity: 0;
   -webkit-animation: fadein 2s both;
           animation: fadein 2s both;
+  padding: 15px 0;
 }
 
 .menu-categorie .type-plats {
@@ -675,7 +701,7 @@ footer .foot-icone {
 
 .menu-categorie ._plat {
   margin: 20px;
-  height: 60px;
+  height: 70px;
   background-color: white;
   -webkit-box-shadow: 0px 2px 5px lightgrey;
           box-shadow: 0px 2px 5px lightgrey;
@@ -755,11 +781,15 @@ footer .foot-icone {
   margin-right: 10px;
   padding: 0 0 10px 20px;
   background-color: white;
+  font-weight: 500;
+  color: #353535;
 }
 
 .prix-coche .prix::before {
   content: "...";
   opacity: 0;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
 }
 
 .prix-coche .coche {

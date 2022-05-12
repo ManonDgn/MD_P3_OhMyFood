@@ -71,6 +71,14 @@
         transform: translateY(0px)
     }
 }
+@keyframes fadeout {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
 @keyframes fill {
     0% {
         opacity: 0.2;
