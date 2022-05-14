@@ -413,7 +413,7 @@ main * {
         -ms-flex-pack: justify;
             justify-content: space-between;
     gap: 10px;
-    max-width: 1600px;
+    max-width: 1200px;
     margin: auto;
   }
 }
@@ -493,7 +493,7 @@ main * {
 
 @media screen and (min-width: 768px) {
   .titre-section {
-    max-width: 1600px;
+    max-width: 1200px;
     margin: auto;
   }
 }
@@ -509,7 +509,7 @@ main * {
     gap: 10px;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
-    max-width: 1600px;
+    max-width: 1200px;
     margin: 30px auto;
   }
 }
@@ -712,6 +712,13 @@ footer .foot-icone {
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+@media screen and (min-width: 768px) {
+  .r-photo img {
+    -o-object-fit: center;
+       object-fit: center;
+  }
 }
 
 .r-body {

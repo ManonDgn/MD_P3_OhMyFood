@@ -136,7 +136,7 @@ main * {
         display: flex;
         justify-content: space-between;
         gap: 10px;
-        max-width: 1600px;
+        max-width: 1200px;
         margin: auto;
     }
 }
@@ -195,7 +195,7 @@ main * {
 }
 .titre-section {
     @include tablette-desktop {
-        max-width: 1600px;
+        max-width: 1200px;
         margin: auto;
     }
 }
@@ -205,7 +205,7 @@ main * {
         justify-content: space-between;
         gap: 10px;
         flex-wrap: wrap;
-        max-width: 1600px;
+        max-width: 1200px;
         margin: 30px auto;
     }
 }
@@ -348,6 +348,9 @@ footer {
         height: 100%;
         width: 100%;
         object-fit: cover;
+        @include tablette-desktop {
+            object-fit: center;
+        }
     }
 }
 .r-body {
