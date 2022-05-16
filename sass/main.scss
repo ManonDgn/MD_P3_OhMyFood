@@ -21,7 +21,7 @@ h2 {
 .loader-bloc {
     width: 100vw;
     height: 100vh;
-    position: absolute;
+    position: fixed;
     background-color: white;
     opacity: 1;
     animation: fade 1s forwards;
