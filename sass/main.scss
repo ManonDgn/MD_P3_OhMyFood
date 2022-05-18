@@ -2,6 +2,9 @@
 @import "./Utils/keyframes";
 @import "./Utils/mixins";
 
+html {
+    scroll-behavior: smooth;
+}
 * {
     margin: 0;
     padding: 0;
@@ -16,6 +19,7 @@ h1 {
 }
 h2 {
     margin: 0;
+    padding: 10px 0;
 }
 /* ------------------------------------- LOADER */
 .loader-bloc {
@@ -25,7 +29,7 @@ h2 {
     background-color: white;
     opacity: 1;
     animation: fade 1s forwards;
-    animation-delay: 3s;
+    animation-delay: 2s;
     z-index: 999;
 }
 .loader {
@@ -39,7 +43,7 @@ h2 {
     margin: 150px auto;
     position: relative;
     transform: translateZ(0);
-    animation: load 1.5s infinite ease, round 1.5s infinite ease;
+    animation: load 1s infinite ease, round 1s infinite ease;
   }
 
 /* --------------------------------- HEADER */
@@ -106,30 +110,31 @@ main * {
     }
 }
 .btn {
-    color: white;
     text-decoration: none;
+    scroll-behavior: smooth;
+    border: none;
+    color: white;
     font-family: $typo-texte;
     font-size: 17px;
-    .btn-action {
-        background: rgb(255,121,218);
-        background: linear-gradient(170deg, rgba(255,121,218,1) 0%, rgba(147,86,220,1) 100%);
-        height: 50px;
-        width: 230px;
-        margin: 15px 40px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-radius: 40px;
-        box-shadow: 0px 4px 10px grey;
-        &:hover {
-            background: linear-gradient(170deg, lighten(#FF79DA, 3), lighten(#9356DC, 3));
-            box-shadow: 0px 4px 15px 1px grey;
-        }
+    background: rgb(255,121,218);
+    background: linear-gradient(170deg, rgba(255,121,218,1) 0%, rgba(147,86,220,1) 100%);
+    height: 50px;
+    width: 230px;
+    margin: 15px 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 40px;
+    box-shadow: 0px 4px 10px grey;
+    cursor: pointer;
+    &:hover {
+        background: linear-gradient(170deg, lighten(#FF79DA, 3), lighten(#9356DC, 3));
+        box-shadow: 0px 4px 15px 1px grey;
     }
 }
 /* --------------------------------------- FONCTIONNEMENT */
 .fonctionnement {
-    padding: 30px 20px;
+    padding: 50px 20px;
 }
 .f-cartes {
     @include tablette-desktop {
@@ -153,12 +158,12 @@ main * {
         width: 100%;
     }
     &_num {
-        height: 23px;
-        width: 23px;
-        min-width: 23px;
-        min-height: 23px;
-        font-size: 15px;
-        padding-top: 3px;
+        height: 28px;
+        width: 28px;
+        min-width: 28px;
+        min-height: 28px;
+        font-size: 17px;
+        padding-top: 4px;
         border-radius: 15px;
         text-align: center;
         background-color: $color-1;
@@ -170,8 +175,9 @@ main * {
         height: 20px;
         width: 20px;
         color: #7D7D7D;
-        margin: 0 25px;
+        margin: 0 20px;
         font-size: 20px;
+        text-align: center;
     }
     &_text {
         font-weight: 400;
@@ -190,7 +196,7 @@ main * {
 }
 /* --------------------------------------- LISTE RESTAURANTS EN FONCTION DE LA LOCALISATION*/
 .liste-restaurants {
-    padding: 30px 20px;
+    padding: 50px 20px;
     background-color: $color-grey2 ;
 }
 .titre-section {
@@ -224,7 +230,7 @@ main * {
     }
 }
 .carte-pic {
-    height: 70%;
+    height: 65%;
     overflow: hidden;
     border-radius: 30px 30px 0 0;
     position: relative;
@@ -233,28 +239,29 @@ main * {
         width: 100%;
         object-fit: cover;
         object-position: bottom;
-        @include tablette-desktop {
+       /* @include tablette-desktop {
             object-position: center;
-        }
+        } */
     }
     .img-verti {
         object-position: center;
     }
-    &_label {
+}
+.nouveau-restaurant {
+    &::after {
+        content: "Nouveau";
         position: absolute;
         right: 20px;
         top: 20px;
-        &_new {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-weight: 400;
-            color: darken($color: $color-3, $amount: 40);
-            height: 35px;
-            padding: 5px 15px;
-            background-color: $color-3;
-            border-radius: 3px;
-        }
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: 400;
+        color: darken($color: $color-3, $amount: 40);
+        height: 30px;
+        padding: 5px 15px;
+        background-color: $color-3;
+        border-radius: 3px;
     }
 }
 .carte-body {
@@ -263,7 +270,7 @@ main * {
     align-items: center;
     justify-content: space-between;
     padding: 0 20px;
-    ._titre {
+    ._titre-carte {
         font-size: 22px;
         font-weight: 500;
         margin: 5px 0;
@@ -278,6 +285,8 @@ main * {
     display: inline-block;
     font-size: 30px;
     color: $color-black;
+    height: 30px;
+    width: 30px;
     margin-right: 20px;
     &:hover, &:active {
         font-weight: bold;
@@ -301,6 +310,14 @@ footer {
         font-size: 18px;
         margin-left: 20px;
     }
+    .flex {
+        @include tablette-desktop {
+        display: flex;
+        width: 400px;
+        justify-content: space-between;
+        align-items: center;
+        }
+    }
     ul {
         list-style-type: none;
         padding-left: 20px;
@@ -313,7 +330,12 @@ footer {
         color: white;
     }
    .foot-icone {
-       margin-right: 12px;
+       margin-right: 13px;
+       display: inline-block;
+       font-size: 15px;
+       height: 15px;
+       width: 15px;
+       text-align: center;
    }
 }
 /* ------------------------ PAGE 2 - 3 - 4 - 5 */
@@ -329,14 +351,14 @@ footer {
     }
 }
 .logo-rest {
+    height: 45%;
     position: relative;
-    left: -11px;
 }
 .fa-arrow-left {
     display: inline-block;
     font-size: 25px;
     position: relative;
-    left: -70px;
+    left: -50px;
 }
 .restaurant-menu {
     background-color: $color-grey2;
@@ -349,7 +371,7 @@ footer {
         width: 100%;
         object-fit: cover;
         @include tablette-desktop {
-            object-fit: center;
+            object-position: center;
         }
     }
 }
@@ -385,7 +407,7 @@ footer {
         font-weight: 300;
         font-size: 20px;
         text-transform: uppercase;
-        margin: 20px;
+        margin: 5px 20px;
         .h2-underline {
             display: inline-block;
             padding-bottom: 6px;
@@ -394,7 +416,7 @@ footer {
     }
     ._plat {
         margin: 20px;
-        height: 70px;
+        min-height: 70px;
         background-color: white;
         box-shadow: 0px 2px 5px lightgrey;
         border-radius: 15px;
@@ -403,6 +425,7 @@ footer {
         justify-content: space-between;
         align-items: flex-end;
         overflow: hidden;
+        position: relative;
     }
 }
 .p1 {
@@ -416,16 +439,20 @@ footer {
 }
 
 .titre-description {
-    height: 100%;
+    min-height: 70px;
+    width: 70%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    margin-left: 10px;
+    margin-left: 15px;
     padding: 10px 0;
+    position: relative;
+    z-index: 1;
 }
     .p-titre {
         font-weight: 600;
         font-size: 18px;
+        padding-bottom: 5px;
     }
     .p-desc {
         font-weight: 300;
@@ -439,26 +466,34 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    margin-right: -70px;
+    margin-right: -50px;
+    position: absolute;
+    right: 0px;
+    z-index: 99;
     .prix {
-        margin-right: 10px;
-        padding: 0 0 10px 20px;
-        background-color: white;
+        padding: 0 20px 10px 0px;
         font-weight: 500;
-        color: $color-black;
+        color: black;
+        background-color: white;
         &::before {
-            content: "...";
+            content: "…";
+            font-weight: 300;
+            font-size: 16px;
+            padding-right: 10px;
             opacity: 0;
-            transition: all 0.5s;
+            transition: all 0.2s;
+            @include tablette-desktop {
+                content: none;
+            }
         }
     }
     .coche {
         background-color:$color-3;
-        height: 100%;
+        min-height: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 70px;
+        width: 50px;
     }
     .fa-check {
         text-align: center;
@@ -476,15 +511,15 @@ footer {
     &:hover {
         .prix-coche {
             margin: 0;
-            transition: all 2s;
             animation: move 3s both;
+            transition: all 1s;
             .prix::before {
-                opacity: 1;
-                transition: all 1.5s;
+                animation: fadeinandout 3s;
+                /*transition: all 0.5s;*/
             }
         }
         .fa-check{
-            animation: coche 1.5s;
+            animation: coche 1s;
         }
     }
 }

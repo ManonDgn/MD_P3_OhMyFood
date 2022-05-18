@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap");
 @-webkit-keyframes fade {
@@ -141,8 +142,8 @@
             transform: translateX(0px);
   }
   100% {
-    -webkit-transform: translateX(70px);
-            transform: translateX(70px);
+    -webkit-transform: translateX(50px);
+            transform: translateX(50px);
   }
 }
 
@@ -156,8 +157,8 @@
             transform: translateX(0px);
   }
   100% {
-    -webkit-transform: translateX(70px);
-            transform: translateX(70px);
+    -webkit-transform: translateX(50px);
+            transform: translateX(50px);
   }
 }
 
@@ -184,6 +185,30 @@
     opacity: 1;
     -webkit-transform: translateY(0px);
             transform: translateY(0px);
+  }
+}
+
+@-webkit-keyframes fadeinandout {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeinandout {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
   }
 }
 
@@ -223,6 +248,10 @@
   }
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -240,6 +269,7 @@ h1 {
 
 h2 {
   margin: 0;
+  padding: 10px 0;
 }
 
 /* ------------------------------------- LOADER */
@@ -251,8 +281,8 @@ h2 {
   opacity: 1;
   -webkit-animation: fade 1s forwards;
           animation: fade 1s forwards;
-  -webkit-animation-delay: 3s;
-          animation-delay: 3s;
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
   z-index: 999;
 }
 
@@ -268,8 +298,8 @@ h2 {
   position: relative;
   -webkit-transform: translateZ(0);
           transform: translateZ(0);
-  -webkit-animation: load 1.5s infinite ease, round 1.5s infinite ease;
-          animation: load 1.5s infinite ease, round 1.5s infinite ease;
+  -webkit-animation: load 1s infinite ease, round 1s infinite ease;
+          animation: load 1s infinite ease, round 1s infinite ease;
 }
 
 /* --------------------------------- HEADER */
@@ -367,13 +397,12 @@ main * {
 }
 
 .btn {
-  color: white;
   text-decoration: none;
+  scroll-behavior: smooth;
+  border: none;
+  color: white;
   font-family: "Roboto", Arial, sans-serif;
   font-size: 17px;
-}
-
-.btn .btn-action {
   background: #ff79da;
   background: linear-gradient(170deg, #ff79da 0%, #9356dc 100%);
   height: 50px;
@@ -391,9 +420,10 @@ main * {
   border-radius: 40px;
   -webkit-box-shadow: 0px 4px 10px grey;
           box-shadow: 0px 4px 10px grey;
+  cursor: pointer;
 }
 
-.btn .btn-action:hover {
+.btn:hover {
   background: linear-gradient(170deg, #ff88de, #9b63df);
   -webkit-box-shadow: 0px 4px 15px 1px grey;
           box-shadow: 0px 4px 15px 1px grey;
@@ -401,7 +431,7 @@ main * {
 
 /* --------------------------------------- FONCTIONNEMENT */
 .fonctionnement {
-  padding: 30px 20px;
+  padding: 50px 20px;
 }
 
 @media screen and (min-width: 768px) {
@@ -443,12 +473,12 @@ main * {
 }
 
 .f-carte_num {
-  height: 23px;
-  width: 23px;
-  min-width: 23px;
-  min-height: 23px;
-  font-size: 15px;
-  padding-top: 3px;
+  height: 28px;
+  width: 28px;
+  min-width: 28px;
+  min-height: 28px;
+  font-size: 17px;
+  padding-top: 4px;
   border-radius: 15px;
   text-align: center;
   background-color: #9356DC;
@@ -461,8 +491,9 @@ main * {
   height: 20px;
   width: 20px;
   color: #7D7D7D;
-  margin: 0 25px;
+  margin: 0 20px;
   font-size: 20px;
+  text-align: center;
 }
 
 .f-carte_text {
@@ -487,7 +518,7 @@ main * {
 
 /* --------------------------------------- LISTE RESTAURANTS EN FONCTION DE LA LOCALISATION*/
 .liste-restaurants {
-  padding: 30px 20px;
+  padding: 50px 20px;
   background-color: #F2F2F2;
 }
 
@@ -534,7 +565,7 @@ main * {
 }
 
 .carte-pic {
-  height: 70%;
+  height: 65%;
   overflow: hidden;
   border-radius: 30px 30px 0 0;
   position: relative;
@@ -547,13 +578,9 @@ main * {
      object-fit: cover;
   -o-object-position: bottom;
      object-position: bottom;
-}
-
-@media screen and (min-width: 768px) {
-  .carte-pic img {
-    -o-object-position: center;
-       object-position: center;
-  }
+  /* @include tablette-desktop {
+            object-position: center;
+        } */
 }
 
 .carte-pic .img-verti {
@@ -561,13 +588,11 @@ main * {
      object-position: center;
 }
 
-.carte-pic_label {
+.nouveau-restaurant::after {
+  content: "Nouveau";
   position: absolute;
   right: 20px;
   top: 20px;
-}
-
-.carte-pic_label_new {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -579,7 +604,7 @@ main * {
           align-items: center;
   font-weight: 400;
   color: #278870;
-  height: 35px;
+  height: 30px;
   padding: 5px 15px;
   background-color: #99E2D0;
   border-radius: 3px;
@@ -599,7 +624,7 @@ main * {
   padding: 0 20px;
 }
 
-.carte-body ._titre {
+.carte-body ._titre-carte {
   font-size: 22px;
   font-weight: 500;
   margin: 5px 0;
@@ -615,6 +640,8 @@ main * {
   display: inline-block;
   font-size: 30px;
   color: #353535;
+  height: 30px;
+  width: 30px;
   margin-right: 20px;
 }
 
@@ -645,6 +672,21 @@ footer .h2-footer {
   margin-left: 20px;
 }
 
+@media screen and (min-width: 768px) {
+  footer .flex {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 400px;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
 footer ul {
   list-style-type: none;
   padding-left: 20px;
@@ -660,7 +702,12 @@ footer a {
 }
 
 footer .foot-icone {
-  margin-right: 12px;
+  margin-right: 13px;
+  display: inline-block;
+  font-size: 15px;
+  height: 15px;
+  width: 15px;
+  text-align: center;
 }
 
 /* ------------------------ PAGE 2 - 3 - 4 - 5 */
@@ -687,15 +734,15 @@ footer .foot-icone {
 }
 
 .logo-rest {
+  height: 45%;
   position: relative;
-  left: -11px;
 }
 
 .fa-arrow-left {
   display: inline-block;
   font-size: 25px;
   position: relative;
-  left: -70px;
+  left: -50px;
 }
 
 .restaurant-menu {
@@ -716,8 +763,8 @@ footer .foot-icone {
 
 @media screen and (min-width: 768px) {
   .r-photo img {
-    -o-object-fit: center;
-       object-fit: center;
+    -o-object-position: center;
+       object-position: center;
   }
 }
 
@@ -767,7 +814,7 @@ footer .foot-icone {
   font-weight: 300;
   font-size: 20px;
   text-transform: uppercase;
-  margin: 20px;
+  margin: 5px 20px;
 }
 
 .menu-categorie .type-plats .h2-underline {
@@ -778,7 +825,7 @@ footer .foot-icone {
 
 .menu-categorie ._plat {
   margin: 20px;
-  height: 70px;
+  min-height: 70px;
   background-color: white;
   -webkit-box-shadow: 0px 2px 5px lightgrey;
           box-shadow: 0px 2px 5px lightgrey;
@@ -794,6 +841,7 @@ footer .foot-icone {
       -ms-flex-align: end;
           align-items: flex-end;
   overflow: hidden;
+  position: relative;
 }
 
 .p1 {
@@ -812,7 +860,8 @@ footer .foot-icone {
 }
 
 .titre-description {
-  height: 100%;
+  min-height: 70px;
+  width: 70%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -823,13 +872,16 @@ footer .foot-icone {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  margin-left: 10px;
+  margin-left: 15px;
   padding: 10px 0;
+  position: relative;
+  z-index: 1;
 }
 
 .p-titre {
   font-weight: 600;
   font-size: 18px;
+  padding-bottom: 5px;
 }
 
 .p-desc {
@@ -851,27 +903,38 @@ footer .foot-icone {
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
-  margin-right: -70px;
+  margin-right: -50px;
+  position: absolute;
+  right: 0px;
+  z-index: 99;
 }
 
 .prix-coche .prix {
-  margin-right: 10px;
-  padding: 0 0 10px 20px;
-  background-color: white;
+  padding: 0 20px 10px 0px;
   font-weight: 500;
-  color: #353535;
+  color: black;
+  background-color: white;
 }
 
 .prix-coche .prix::before {
-  content: "...";
+  content: "…";
+  font-weight: 300;
+  font-size: 16px;
+  padding-right: 10px;
   opacity: 0;
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+@media screen and (min-width: 768px) {
+  .prix-coche .prix::before {
+    content: none;
+  }
 }
 
 .prix-coche .coche {
   background-color: #99E2D0;
-  height: 100%;
+  min-height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -881,7 +944,7 @@ footer .foot-icone {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 70px;
+  width: 50px;
 }
 
 .prix-coche .fa-check {
@@ -897,21 +960,21 @@ footer .foot-icone {
 
 ._plat:hover .prix-coche {
   margin: 0;
-  -webkit-transition: all 2s;
-  transition: all 2s;
   -webkit-animation: move 3s both;
           animation: move 3s both;
+  -webkit-transition: all 1s;
+  transition: all 1s;
 }
 
 ._plat:hover .prix-coche .prix::before {
-  opacity: 1;
-  -webkit-transition: all 1.5s;
-  transition: all 1.5s;
+  -webkit-animation: fadeinandout 3s;
+          animation: fadeinandout 3s;
+  /*transition: all 0.5s;*/
 }
 
 ._plat:hover .fa-check {
-  -webkit-animation: coche 1.5s;
-          animation: coche 1.5s;
+  -webkit-animation: coche 1s;
+          animation: coche 1s;
 }
 
 .r-commande {

@@ -27,9 +27,7 @@
             <div class="presentation">
                 <h1>Réservez le menu qui vous convient</h1>
                 <p class="presentation-sous-titre">Découvrez des restaurants d'exception, séléctionnés par nos soins.</p>
-                <a href="#" class="btn">
-                    <div class="btn-action">Explorer nos restaurants</div>
-                </a>
+                <a href="#ancre-restaurants" class="btn">Explorer nos restaurants</a>
             </div>
             <!-- Fonctionnement détaillé OhMyFood-->
             <div class="fonctionnement">
@@ -53,20 +51,17 @@
                 </div>
             </div>
             <!-- Liste restaurants selon localisation-->
-            <div class="liste-restaurants">
-                <h2 class="titre-section">Restaurants</h2>
+            <section class="liste-restaurants">
+                <h2 class="titre-section" id="ancre-restaurants">Restaurants</h2>
                 <div class="restaurants-cartes">
                     <div class="restau-carte">
                         <a href="la-palette-du-gout.html">
-                            <div class="carte-pic">
-                                <div class="carte-pic_label">
-                                    <p class="carte-pic_label_new">Nouveau</p>
-                                </div>
+                            <div class="carte-pic nouveau-restaurant">
                                 <img src="./img/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="Restaurant La palette du gout Paris"/>
                             </div>
                             <div class="carte-body">
                                 <div class="_titre-place">
-                                    <p class="_titre">La palette du goût</p>
+                                    <h3 class="_titre-carte">La palette du goût</h3>
                                     <p class="_place">Ménilmontant</p>
                                 </div>
                                 <span class="coeur-icone">
@@ -77,15 +72,12 @@
                     </div>
                     <div class="restau-carte">
                         <a href="la-note-enchantee.html">
-                            <div class="carte-pic">
-                                <div class="carte-pic_label">
-                                    <p class="carte-pic_label_new">Nouveau</p>
-                                </div>
+                            <div class="carte-pic nouveau-restaurant">
                                 <img src="./img/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg" class="img-verti" alt="Restaurant La note enchantée Paris"/>
                             </div>
                             <div class="carte-body">
                                 <div class="_titre-place">
-                                    <p class="_titre">La note enchantée</p>
+                                    <h3 class="_titre-carte">La note enchantée</h3>
                                     <p class="_place">Charonne</p>
                                 </div>
                                 <span class="coeur-icone">
@@ -101,7 +93,7 @@
                             </div>
                             <div class="carte-body">
                                 <div class="_titre-place">
-                                    <p class="_titre">À la française</p>
+                                    <h3 class="_titre-carte">À la française</h3>
                                     <p class="_place">Cité Rouge</p>
                                 </div>
                                 <span class="coeur-icone">
@@ -117,7 +109,7 @@
                             </div>
                             <div class="carte-body">
                                 <div class="_titre-place">
-                                    <p class="_titre">Le délice des sens</p>
+                                    <h3 class="_titre-carte">Le délice des sens</h3>
                                     <p class="_place">Folie-Méricourt</p>
                                 </div>
                                 <span class="coeur-icone">
@@ -127,16 +119,22 @@
                         </a>                        
                     </div>
                 </div>
-            </div>
+            </section>
         </main>
         <footer>
-            <h2 class="h2-footer">Ohmyfood</h2>
-            <ul>
-                <li><i class="fa-solid fa-handshake-angle foot-icone"></i><a href="#">Proposer un restaurant</a></li>
-                <li><i class="fa-solid fa-utensils foot-icone"></i><a href="#">Devenir partenaire</a></li>
-                <li><a href="#">Mentions légales</a></li>
-                <li><a href="mailto:contact@ohmyfood.com">Contact</a></li>
-            </ul>   
+            <nav>
+                <p class="h2-footer">Ohmyfood</p>
+                <div class="flex">
+                    <ul>
+                        <li><i class="fa-solid fa-utensils foot-icone"></i><a href="#">Proposer un restaurant</a></li>
+                        <li><i class="fa-solid fa-handshake-angle foot-icone"></i><a href="#">Devenir partenaire</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="#">Mentions légales</a></li>
+                        <li><a href="mailto:contact@ohmyfood.com">Contact</a></li>
+                    </ul> 
+                </div>
+            </nav>
         </footer>
     </body>
 </html>
