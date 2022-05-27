@@ -565,7 +565,7 @@ main * {
 }
 
 .carte-pic {
-  height: 65%;
+  height: 70%;
   overflow: hidden;
   border-radius: 30px 30px 0 0;
   position: relative;
@@ -578,9 +578,6 @@ main * {
      object-fit: cover;
   -o-object-position: bottom;
      object-position: bottom;
-  /* @include tablette-desktop {
-            object-position: center;
-        } */
 }
 
 .carte-pic .img-verti {
@@ -798,7 +795,7 @@ footer .foot-icone {
 
 .r-body ._titre .r-h1 {
   font-family: "Shrikhand", serif;
-  font-size: 30px;
+  font-size: 25px;
   margin: 10px 0;
 }
 
@@ -817,10 +814,12 @@ footer .foot-icone {
   margin: 5px 20px;
 }
 
-.menu-categorie .type-plats .h2-underline {
-  display: inline-block;
-  padding-bottom: 6px;
-  border-bottom: 3px solid #99E2D0;
+.menu-categorie .type-plats::after {
+  content: "";
+  display: block;
+  width: 50px;
+  padding-top: 3px;
+  border-bottom: 2px solid #99E2D0;
 }
 
 .menu-categorie ._plat {
@@ -958,7 +957,7 @@ footer .foot-icone {
   color: #99E2D0;
 }
 
-._plat:hover .prix-coche {
+._plat:hover .prix-coche, ._plat:active .prix-coche {
   margin: 0;
   -webkit-animation: move 3s both;
           animation: move 3s both;
@@ -966,13 +965,12 @@ footer .foot-icone {
   transition: all 1s;
 }
 
-._plat:hover .prix-coche .prix::before {
+._plat:hover .prix-coche .prix::before, ._plat:active .prix-coche .prix::before {
   -webkit-animation: fadeinandout 3s;
           animation: fadeinandout 3s;
-  /*transition: all 0.5s;*/
 }
 
-._plat:hover .fa-check {
+._plat:hover .fa-check, ._plat:active .fa-check {
   -webkit-animation: coche 1s;
           animation: coche 1s;
 }

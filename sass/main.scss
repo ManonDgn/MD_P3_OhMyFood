@@ -230,7 +230,7 @@ main * {
     }
 }
 .carte-pic {
-    height: 65%;
+    height: 70%;
     overflow: hidden;
     border-radius: 30px 30px 0 0;
     position: relative;
@@ -239,9 +239,6 @@ main * {
         width: 100%;
         object-fit: cover;
         object-position: bottom;
-       /* @include tablette-desktop {
-            object-position: center;
-        } */
     }
     .img-verti {
         object-position: center;
@@ -392,7 +389,7 @@ footer {
         padding-top: 25px;
         .r-h1 {
             font-family: $typo-titre;
-            font-size: 30px;
+            font-size: 25px;
             margin: 10px 0;
         }
     }
@@ -408,12 +405,14 @@ footer {
         font-size: 20px;
         text-transform: uppercase;
         margin: 5px 20px;
-        .h2-underline {
-            display: inline-block;
-            padding-bottom: 6px;
-            border-bottom: 3px solid $color-3;
+        &::after {
+            content: "";
+            display: block;
+            width: 50px;
+            padding-top: 3px;
+            border-bottom: 2px solid $color-3;
         }
-    }
+        }
     ._plat {
         margin: 20px;
         min-height: 70px;
@@ -428,6 +427,7 @@ footer {
         position: relative;
     }
 }
+
 .p1 {
     animation-delay: 0.4s;
 }
@@ -508,20 +508,20 @@ footer {
 }
 
 ._plat {
-    &:hover {
+    &:hover, &:active {
         .prix-coche {
             margin: 0;
             animation: move 3s both;
             transition: all 1s;
             .prix::before {
                 animation: fadeinandout 3s;
-                /*transition: all 0.5s;*/
             }
         }
         .fa-check{
             animation: coche 1s;
         }
     }
+    &:hover::after {}
 }
 .r-commande {
     height: 100px;
