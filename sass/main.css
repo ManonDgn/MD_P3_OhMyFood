@@ -1,4 +1,3 @@
-@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap");
 @-webkit-keyframes fade {
@@ -129,36 +128,6 @@
   100% {
     -webkit-transform: rotate(0deg);
             transform: rotate(0deg);
-  }
-}
-
-@-webkit-keyframes move {
-  0% {
-    -webkit-transform: translateX(0px);
-            transform: translateX(0px);
-  }
-  50% {
-    -webkit-transform: translateX(0px);
-            transform: translateX(0px);
-  }
-  100% {
-    -webkit-transform: translateX(50px);
-            transform: translateX(50px);
-  }
-}
-
-@keyframes move {
-  0% {
-    -webkit-transform: translateX(0px);
-            transform: translateX(0px);
-  }
-  50% {
-    -webkit-transform: translateX(0px);
-            transform: translateX(0px);
-  }
-  100% {
-    -webkit-transform: translateX(50px);
-            transform: translateX(50px);
   }
 }
 
@@ -640,6 +609,7 @@ main * {
   height: 30px;
   width: 30px;
   margin-right: 20px;
+  cursor: pointer;
 }
 
 .fa-heart:hover, .fa-heart:active {
@@ -795,7 +765,7 @@ footer .foot-icone {
 
 .r-body ._titre .r-h1 {
   font-family: "Shrikhand", serif;
-  font-size: 25px;
+  font-size: 26px;
   margin: 10px 0;
 }
 
@@ -818,29 +788,8 @@ footer .foot-icone {
   content: "";
   display: block;
   width: 50px;
-  padding-top: 3px;
-  border-bottom: 2px solid #99E2D0;
-}
-
-.menu-categorie ._plat {
-  margin: 20px;
-  min-height: 70px;
-  background-color: white;
-  -webkit-box-shadow: 0px 2px 5px lightgrey;
-          box-shadow: 0px 2px 5px lightgrey;
-  border-radius: 15px;
-  cursor: pointer;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
-  overflow: hidden;
-  position: relative;
+  border-bottom: #99E2D0 solid 2px;
+  padding-bottom: 5px;
 }
 
 .p1 {
@@ -858,9 +807,32 @@ footer .foot-icone {
           animation-delay: 1.2s;
 }
 
-.titre-description {
+._plat {
+  -webkit-box-shadow: 0px 2px 5px lightgrey;
+          box-shadow: 0px 2px 5px lightgrey;
+  border-radius: 15px;
+  background-color: white;
   min-height: 70px;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+  margin: 20px;
+}
+
+.titre-description {
   width: 70%;
+  min-height: 70px;
+  position: relative;
+  -webkit-transition: width 1s;
+  transition: width 1s;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -868,30 +840,33 @@ footer .foot-icone {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  margin-left: 15px;
-  padding: 10px 0;
-  position: relative;
-  z-index: 1;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  margin-left: 10px;
+  transition: width 1s;
 }
 
-.p-titre {
+.titre-description .p-titre {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   font-weight: 600;
   font-size: 18px;
   padding-bottom: 5px;
 }
 
-.p-desc {
-  font-weight: 300;
-  font-size: 16px;
+.titre-description .p-desc {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  font-weight: 300;
+  font-size: 16px;
+  padding: 0 5px 12px 0;
 }
 
 .prix-coche {
+  width: 60px;
   height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -902,51 +877,38 @@ footer .foot-icone {
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
-  margin-right: -50px;
-  position: absolute;
-  right: 0px;
-  z-index: 99;
+  overflow: hidden;
+  -webkit-transition: width 1s;
+  transition: width 1s;
 }
 
 .prix-coche .prix {
-  padding: 0 20px 10px 0px;
+  padding: 0 0 12px 10px;
   font-weight: 500;
-  color: black;
-  background-color: white;
-}
-
-.prix-coche .prix::before {
-  content: "…";
-  font-weight: 300;
-  font-size: 16px;
-  padding-right: 10px;
-  opacity: 0;
-  -webkit-transition: all 0.2s;
-  transition: all 0.2s;
-}
-
-@media screen and (min-width: 768px) {
-  .prix-coche .prix::before {
-    content: none;
-  }
 }
 
 .prix-coche .coche {
+  min-height: 70px;
+  width: 50px;
+  height: 100%;
+  margin-right: -50px;
   background-color: #99E2D0;
-  min-height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 50px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transition: -webkit-transform 1s;
+  transition: -webkit-transform 1s;
+  transition: transform 1s;
+  transition: transform 1s, -webkit-transform 1s;
 }
 
-.prix-coche .fa-check {
+.prix-coche .coche .fa-check {
   text-align: center;
   height: 20px;
   width: 20px;
@@ -958,21 +920,21 @@ footer .foot-icone {
 }
 
 ._plat:hover .prix-coche, ._plat:active .prix-coche {
-  margin: 0;
-  -webkit-animation: move 3s both;
-          animation: move 3s both;
-  -webkit-transition: all 1s;
-  transition: all 1s;
+  width: 110px;
 }
 
-._plat:hover .prix-coche .prix::before, ._plat:active .prix-coche .prix::before {
-  -webkit-animation: fadeinandout 3s;
-          animation: fadeinandout 3s;
+._plat:hover .coche, ._plat:active .coche {
+  -webkit-transform: translateX(-50px);
+          transform: translateX(-50px);
 }
 
 ._plat:hover .fa-check, ._plat:active .fa-check {
   -webkit-animation: coche 1s;
           animation: coche 1s;
+}
+
+._plat:hover .titre-description, ._plat:active .titre-description {
+  width: 65%;
 }
 
 .r-commande {
